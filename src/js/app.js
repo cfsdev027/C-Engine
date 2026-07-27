@@ -15,7 +15,7 @@ import { ServiceStorage } from './modules/service-storage.js';
 function appendStyleSheetWithoutCache(css) {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = `../css/${css}?v=${Date.now()}`; 
+    link.href = `./css/${css}?v=${Date.now()}`; 
     document.head.appendChild(link);
 }
 
