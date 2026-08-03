@@ -370,7 +370,7 @@ export const SidebarUI = {
         elMPMinLabel.innerHTML = "0";
 
         let elMPSepLabel = el('span', ['mp-sep-label'], {id: 'mp-sep-label'});
-        elMPMinLabel.innerHTML = "/";
+        elMPSepLabel.innerHTML = "/";
       
         let elMPMaxLabel = el('span', ['mp-max-label'], {id: 'mp-max-label'});
         elMPMaxLabel.innerHTML = "0";
@@ -413,10 +413,10 @@ export const SidebarUI = {
 
     makeXPComponent() {
         let elXPMinLabel = el('span', ['xp-min-label'], {id: 'xp-min-label'});
-        elMPMinLabel.innerHTML = "0";
+        elXPMinLabel.innerHTML = "0";
 
         let elXPSepLabel = el('span', ['xp-sep-label'], {id: 'xp-sep-label'});
-        elMPMinLabel.innerHTML = "/";
+        elXPSepLabel.innerHTML = "/";
       
         let elXPMaxLabel = el('span', ['xp-max-label'], {id: 'xp-max-label'});
         elMPMaxLabel.innerHTML = "0";
