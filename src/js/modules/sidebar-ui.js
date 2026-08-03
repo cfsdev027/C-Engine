@@ -73,7 +73,7 @@ export const SidebarUI = {
 
     makeAttributesSection() {
         let elAttributesLabel = el('h3', ['attributes-label'], {id: 'attributes-label'});
-        elStatsLabel.innerHTML = "ATTRIBUTES";
+        elAttributesLabel.innerHTML = "ATTRIBUTES";
         
         let elAttributesGrid = this.makeAttributesGrid();
 
