@@ -369,7 +369,7 @@ export const SidebarUI = {
         let elMPMinLabel = el('span', ['mp-min-label'], {id: 'mp-min-label'});
         elMPMinLabel.innerHTML = "0";
 
-        let elHPSepLabel = el('span', ['mp-sep-label'], {id: 'mp-sep-label'});
+        let elMPSepLabel = el('span', ['mp-sep-label'], {id: 'mp-sep-label'});
         elMPMinLabel.innerHTML = "/";
       
         let elMPMaxLabel = el('span', ['mp-max-label'], {id: 'mp-max-label'});
