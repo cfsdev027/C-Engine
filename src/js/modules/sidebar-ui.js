@@ -345,7 +345,7 @@ export const SidebarUI = {
         let elHPBarFill = el('div', ['bar-fill', 'hp'], {id: 'hp-bar-fill'});
         elHPBarFill.style.width = "100%";
         
-        let elHPBar = el('div', ['bar-bg'], [id: 'hp-bar-bg']);
+        let elHPBar = el('div', ['bar-bg'], {id: 'hp-bar-bg'});
         elHPBar.append(elHPBarFill);
 
         return elHPBar;
