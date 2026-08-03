@@ -2,7 +2,7 @@ import { el } from './el-ui.js';
 import { ServiceStorage } from './service-storage.js';
 
 export const SidebarUI = {
-    container: document.getElementById("game-container"),
+    container: document.getElementById("sidebar"),
     profile: ServiceStorage.get('profile'),
 
     dispose() {
@@ -22,9 +22,8 @@ export const SidebarUI = {
         let elStatsSection = this.makeStatsSection();
         let elAttributesSection = this.makeAttributesSection();
         let elSkillsSection = this.makeSkillsSection();
-
-        let elSidebar = el('div', ['sidebar'], {id: 'sidebar'});
-        elSidebar.append(elProfileSection, elStatsSection, elAttributesSection, elSkillsSection);
+        
+        this.container.append(elProfileSection, elStatsSection, elAttributesSection, elSkillsSection);
 
         (async () => {
             await this.renderAsync();
