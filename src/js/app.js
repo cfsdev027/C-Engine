@@ -10,6 +10,7 @@ window.addEventListener('unhandledrejection', function (event) {
 
 import { ServiceCookies } from './modules/service-cookies.js';
 import { ServiceStorage } from './modules/service-storage.js';
+import { SidebarUI } from './modules/sidebar-ui.js';
 
 // Função utilitária para injetar CSS com cache-busting
 function appendStyleSheetWithoutCache(css) {
@@ -25,8 +26,9 @@ window.addEventListener('DOMContentLoaded', () => {
         try {
             // Injeta as folhas de estilo com segurança
             appendStyleSheetWithoutCache('style.css');
-            
-            let profile = ServiceStorage.get('profile');
+
+            if(!SidebarUI) throw { stack: 'DOMContentLoaded', message_error: 'Missing SidebarUI component.' };
+            SidebarUI.render();
         } catch(err) {
             alert(err);
         }
