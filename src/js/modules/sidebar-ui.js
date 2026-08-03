@@ -82,6 +82,38 @@ export const SidebarUI = {
         return elAttributesSection;
     },
 
+    makeSkillsSection() {
+        let elSkillsLabel = el('h3', ['skills-label'], [id: 'skills-label']);
+        elSkillsLabel.innerHTML = "SKILLS";
+
+        let elPassiveSkills = el('li', ['passive-skills', 'unlocked'], [id: 'passive-skills']);
+        let elActiveSkills = el('li', ['active-skills', 'unlocked'], [id: 'active-skills']);
+        
+        let elTreeNode = el('ul', ['tree-node'], [id: 'tree-node']);
+        elTreeNode.append(elPassiveSkills, elActiveSkills);
+
+        let elSkillsSection = el('section', ['skills-group', 'skill-tree'], [id: 'skills-group']);
+        elSkillsSection.append(elSkillsLabel, elTreeNode);
+
+        return elSkillsSection;
+    },
+
+    makePassiveSkill(elPassiveSkill) {
+        let elContainer = document.getElementById('passive-skills');
+        if(!elContainer) throw { stack: 'SidebarUI.makePassiveSkill(elPassiveSkill)', message_error: 'Missing CONTAINER.' };
+        if(!elPassiveSkill) throw { stack: 'SidebarUI.makePassiveSkill(elPassiveSkill)', message_error: 'Missing PASSIVE SKILL.' };
+
+        elContainer.append(elPassiveSkill);
+    },
+
+    makeActiveSkill(elActiveSkill) {
+        let elContainer = document.getElementById('active-skills');
+        if(!elContainer) throw { stack: 'SidebarUI.makeActiveSkill(elActiveSkill)', message_error: 'Missing CONTAINER.' };
+        if(!elActiveSkill) throw { stack: 'SidebarUI.makeActiveSkill(elActiveSkill)', message_error: 'Missing ACTIVE SKILL.' };
+
+        elContainer.append(elPassive);
+    },
+
     makeAttributesGrid() {
         let elSTRComponent = this.makeSTRComponent();
         let elDEXComponent = this.makeDEXComponent();
@@ -109,6 +141,20 @@ export const SidebarUI = {
         return elSTRContainer;
     },
 
+    getSTRValue() {
+        let elSTRValue = document.getElementById('str-val');
+        if(!elSTRValue) throw { stack: 'SidebarUI.getSTRValue()', message_error: 'Missing CONTAINER.' };
+
+        return elSTRValue.innerHTML;
+    },
+
+    setSTRValue(value) {
+        let elSTRValue = document.getElementById('str-val');
+        if(!elSTRValue) throw { stack: 'SidebarUI.setSTRValue()', message_error: 'Missing CONTAINER.' };
+
+        elSTRValue.innerHTML = value;
+    },
+
     makeDEXComponent() {
         let elDEXLabel = el('span', ['attr-name', 'dex-label'], [id: 'dex-label']);
         elDEXLabel.innerHTML = "DEX";
@@ -120,6 +166,20 @@ export const SidebarUI = {
         elDEXContainer.append(elDEXLabel, elDEXValue);
 
         return elDEXContainer;
+    },
+
+    getDEXValue() {
+        let elDEXValue = document.getElementById('dex-val');
+        if(!elDEXValue) throw { stack: 'SidebarUI.getDEXValue()', message_error: 'Missing CONTAINER.' };
+
+        return elDEXValue.innerHTML;
+    },
+
+    setDEXValue(value) {
+        let elDEXValue = document.getElementById('dex-val');
+        if(!elDEXValue) throw { stack: 'SidebarUI.setDEXValue()', message_error: 'Missing CONTAINER.' };
+
+        elDEXValue.innerHTML = value;
     },
 
     makeINTComponent() {
@@ -135,6 +195,20 @@ export const SidebarUI = {
         return elINTContainer;
     },
 
+    getINTValue() {
+        let elINTValue = document.getElementById('int-val');
+        if(!elINTValue) throw { stack: 'SidebarUI.getINTValue()', message_error: 'Missing CONTAINER.' };
+
+        return elINTValue.innerHTML;
+    },
+
+    setINTValue(value) {
+        let elINTValue = document.getElementById('int-val');
+        if(!elINTValue) throw { stack: 'SidebarUI.setINTValue()', message_error: 'Missing CONTAINER.' };
+
+        elINTValue.innerHTML = value;
+    },
+
     makeVITComponent() {
         let elVITLabel = el('span', ['attr-name', 'vit-label'], [id: 'vit-label']);
         elVITLabel.innerHTML = "VIT";
@@ -146,6 +220,20 @@ export const SidebarUI = {
         elVITContainer.append(elVITLabel, elVITValue);
 
         return elVITContainer;
+    },
+
+    getVITValue() {
+        let elVITValue = document.getElementById('vit-val');
+        if(!elVITValue) throw { stack: 'SidebarUI.getVITValue()', message_error: 'Missing CONTAINER.' };
+
+        return elVITValue.innerHTML;
+    },
+
+    setVITValue(value) {
+        let elVITValue = document.getElementById('vit-val');
+        if(!elVITValue) throw { stack: 'SidebarUI.setVITValue()', message_error: 'Missing CONTAINER.' };
+
+        elVITValue.innerHTML = value;
     },
 
     makeWISComponent() {
@@ -161,6 +249,20 @@ export const SidebarUI = {
         return elWISContainer;
     },
 
+    getWISValue() {
+        let elWISValue = document.getElementById('wis-val');
+        if(!elWISValue) throw { stack: 'SidebarUI.getWISValue()', message_error: 'Missing CONTAINER.' };
+
+        return elWISValue.innerHTML;
+    },
+
+    setWISValue(value) {
+        let elWISValue = document.getElementById('wis-val');
+        if(!elWISValue) throw { stack: 'SidebarUI.setWISValue()', message_error: 'Missing CONTAINER.' };
+
+        elWISValue.innerHTML = value;
+    },
+
     makeLUKComponent() {
         let elLUKLabel = el('span', ['attr-name', 'luk-label'], [id: 'luk-label']);
         elLUKLabel.innerHTML = "LUK";
@@ -172,6 +274,20 @@ export const SidebarUI = {
         elLUKContainer.append(elLUKLabel, elLUKValue);
 
         return elLUKContainer;
+    },
+
+    getLUKValue() {
+        let elLUKValue = document.getElementById('luk-val');
+        if(!elLUKValue) throw { stack: 'SidebarUI.getLUKValue()', message_error: 'Missing CONTAINER.' };
+
+        return elLUKValue.innerHTML;
+    },
+
+    setLUKValue(value) {
+        let elLUKValue = document.getElementById('luk-val');
+        if(!elLUKValue) throw { stack: 'SidebarUI.setLUKValue()', message_error: 'Missing CONTAINER.' };
+
+        elLUKValue.innerHTML = value;
     },
 
     makeHPComponent() {
@@ -196,6 +312,34 @@ export const SidebarUI = {
         return elHPContainer;
     },
 
+    getHPMaxValue() {
+        let elHPMaxLabel = document.getElementById('hp-max-label');
+        if(!elHPMaxLabel) throw { stack: 'SidebarUI.getHPMaxValue()', message_error: 'Missing CONTAINER.' };
+
+        return elHPMaxLabel.innerHTML;
+    },
+
+    setHPMaxValue(value) {
+        let elHPMaxLabel = document.getElementById('hp-max-label');
+        if(!elHPMaxLabel) throw { stack: 'SidebarUI.setHPMaxValue()', message_error: 'Missing CONTAINER.' };
+
+        elHPMaxLabel.innerHTML = value;
+    },
+
+    getHPCurrentValue() {
+        let elHPMinLabel = document.getElementById('hp-min-label');
+        if(!elHPMinLabel) throw { stack: 'SidebarUI.getHPCurrentValue()', message_error: 'Missing CONTAINER.' };
+
+        return elHPMinLabel.innerHTML;
+    },
+
+    setHPCurrentValue(value) {
+        let elHPMinLabel = document.getElementById('hp-min-label');
+        if(!elHPMinLabel) throw { stack: 'SidebarUI.setHPCurrentValue()', message_error: 'Missing CONTAINER.' };
+
+        elHPMinLabel.innerHTML = value;
+    },
+
     makeHPBar() {
         let elHPBarFill = el('div', ['bar-fill', 'hp'], [id: 'hp-bar-fill']);
         elHPBarFill.style.width = "100%";
@@ -204,6 +348,20 @@ export const SidebarUI = {
         elHPBar.append(elHPBarFill);
 
         return elHPBar;
+    },
+
+    getHPBarValue() {
+        let elHPBarFill = document.getElementById('hp-bar-fill');
+        if(!elHPBarFill) throw { stack: 'SidebarUI.getHPBarValue()', message_error: 'Missing CONTAINER.' };
+
+        return elHPBarFill.style.width;
+    },
+
+    setHPBarValue(value) {
+        let elHPBarFill = document.getElementById('hp-bar-fill');
+        if(!elHPBarFill) throw { stack: 'SidebarUI.setHPBarValue(value)', message_error: 'Missing CONTAINER.' };
+
+        elHPBarFill.style.width = value;
     },
 
     makeMPComponent() {
@@ -238,6 +396,20 @@ export const SidebarUI = {
         return elMPBar;
     },
 
+    getMPBarValue() {
+        let elMPBarFill = document.getElementById('mp-bar-fill');
+        if(!elMPBarFill) throw { stack: 'SidebarUI.getMPBarValue()', message_error: 'Missing CONTAINER.' };
+
+        return elMPBarFill.style.width;
+    },
+
+    setMPBarValue(value) {
+        let elMPBarFill = document.getElementById('mp-bar-fill');
+        if(!elMPBarFill) throw { stack: 'SidebarUI.setMPBarValue(value)', message_error: 'Missing CONTAINER.' };
+
+        elMPBarFill.style.width = value;
+    },
+
     makeXPComponent() {
         let elXPMinLabel = el('span', ['xp-min-label'], [id: 'xp-min-label']);
         elMPMinLabel.innerHTML = "0";
@@ -268,5 +440,19 @@ export const SidebarUI = {
         elXPBar.append(elXPBarFill);
 
         return elXPBar;
+    },
+
+    getMPBarValue() {
+        let elXPBarFill = document.getElementById('xp-bar-fill');
+        if(!elXPBarFill) throw { stack: 'SidebarUI.getMPBarValue()', message_error: 'Missing CONTAINER.' };
+
+        return elXPBarFill.style.width;
+    },
+
+    setMPBarValue(value) {
+        let elXPBarFill = document.getElementById('xp-bar-fill');
+        if(!elXPBarFill) throw { stack: 'SidebarUI.setMPBarValue(value)', message_error: 'Missing CONTAINER.' };
+
+        elXPBarFill.style.width = value;
     },
 };
