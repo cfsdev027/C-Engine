@@ -21,9 +21,10 @@ export const SidebarUI = {
         let elProfileSection = this.makeProfileSection();
         let elStatsSection = this.makeStatsSection();
         let elAttributesSection = this.makeAttributesSection();
+        let elSkillsSection = this.makeSkillsSection();
 
         let elSidebar = el('div', ['sidebar'], [id: 'sidebar']);
-        elSidebar.append(elProfileSection, elStatsSection, elAttributesSection);
+        elSidebar.append(elProfileSection, elStatsSection, elAttributesSection, elSkillsSection);
 
         (async () => {
             await this.renderAsync();
