@@ -20,14 +20,19 @@ export const SidebarUI = {
 
         let elProfileSection = this.makeProfileSection();
         let elStatsSection = this.makeStatsSection();
+        let elAttributesSection = this.makeAttributesSection();
 
         let elSidebar = el('div', ['sidebar'], [id: 'sidebar']);
-        elSidebar.append(elProfileSection);
+        elSidebar.append(elProfileSection, elStatsSection, elAttributesSection);
 
         (async () => {
-            await this.dataInitAsync();
+            await this.renderAsync();
         })();
     },
+
+    async renderAsync() {
+        
+    }
 
     makeProfileSection() {
         let elCharacterName = el('h2', ['character-name'], [id: 'character-name']);
@@ -63,6 +68,110 @@ export const SidebarUI = {
         elStatsSection.append(elStatsLabel, elHPComponent, elMPComponent, elXPComponent);
 
         return elStatsSection;
+    },
+
+    makeAttributesSection() {
+        let elAttributesLabel = el('h3', ['attributes-label'], [id: 'attributes-label']);
+        elStatsLabel.innerHTML = "ATTRIBUTES";
+        
+        let elAttributesGrid = this.makeAttributesGrid();
+
+        let elAttributesSection = el('section', ['attributes-group'], [id: 'attributes-group']);
+        elAttributesSection.append(elAttributesLabel, elAttributesGrid);
+
+        return elAttributesSection;
+    },
+
+    makeAttributesGrid() {
+        let elSTRComponent = this.makeSTRComponent();
+        let elDEXComponent = this.makeDEXComponent();
+        let elINTComponent = this.makeINTComponent();
+        let elVITComponent = this.makeVITComponent();
+        let elWITComponent = this.makeWITComponent();
+        let elLUKComponent = this.makeLUKComponent();
+        
+        let elAttributesGrid = el('div', ['attributes-grid'], [id: 'attributes-grid']);
+        elAttributesGrid.append(elSTRComponent, elDEXComponent, elINTComponent, elVITComponent, elWITComponent, elLUKComponent);
+
+        return elAttributesGrid;
+    },
+
+    makeSTRComponent() {
+        let elSTRLabel = el('span', ['attr-name', 'str-label'], [id: 'str-label']);
+        elSTRLabel.innerHTML = "STR";
+
+        let elSTRValue = el('span', ['attr-val', 'str-val'], [id: 'str-val']);
+        elSTRValue.innerHTML = "0";
+
+        let elSTRContainer = el('div', ['attr-box', 'str-container'], [id: 'str-container']);
+        elSTRContainer.append(elSTRLabel, elSTRValue);
+
+        return elSTRContainer;
+    },
+
+    makeDEXComponent() {
+        let elDEXLabel = el('span', ['attr-name', 'dex-label'], [id: 'dex-label']);
+        elDEXLabel.innerHTML = "DEX";
+
+        let elDEXValue = el('span', ['attr-val', 'dex-val'], [id: 'dex-val']);
+        elDEXValue.innerHTML = "0";
+
+        let elDEXContainer = el('div', ['attr-box', 'dex-container'], [id: 'dex-container']);
+        elDEXContainer.append(elDEXLabel, elDEXValue);
+
+        return elDEXContainer;
+    },
+
+    makeINTComponent() {
+        let elINTLabel = el('span', ['attr-name', 'int-label'], [id: 'int-label']);
+        elINTLabel.innerHTML = "INT";
+
+        let elINTValue = el('span', ['attr-val', 'int-val'], [id: 'int-val']);
+        elINTValue.innerHTML = "0";
+
+        let elINTContainer = el('div', ['attr-box', 'int-container'], [id: 'int-container']);
+        elINTContainer.append(elINTLabel, elINTValue);
+
+        return elINTContainer;
+    },
+
+    makeVITComponent() {
+        let elVITLabel = el('span', ['attr-name', 'vit-label'], [id: 'vit-label']);
+        elVITLabel.innerHTML = "VIT";
+
+        let elVITValue = el('span', ['attr-val', 'vit-val'], [id: 'vit-val']);
+        elVITValue.innerHTML = "0";
+
+        let elVITContainer = el('div', ['attr-box', 'vit-container'], [id: 'vit-container']);
+        elVITContainer.append(elVITLabel, elVITValue);
+
+        return elVITContainer;
+    },
+
+    makeWISComponent() {
+        let elWISLabel = el('span', ['attr-name', 'wis-label'], [id: 'wis-label']);
+        elWISLabel.innerHTML = "WIS";
+
+        let elWISValue = el('span', ['attr-val', 'wis-val'], [id: 'wis-val']);
+        elWISValue.innerHTML = "0";
+
+        let elWISContainer = el('div', ['attr-box', 'wis-container'], [id: 'wis-container']);
+        elWISContainer.append(elWISLabel, elWISValue);
+
+        return elWISContainer;
+    },
+
+    makeLUKComponent() {
+        let elLUKLabel = el('span', ['attr-name', 'luk-label'], [id: 'luk-label']);
+        elLUKLabel.innerHTML = "LUK";
+
+        let elLUKValue = el('span', ['attr-val', 'luk-val'], [id: 'luk-val']);
+        elLUKValue.innerHTML = "0";
+
+        let elLUKContainer = el('div', ['attr-box', 'luk-container'], [id: 'luk-container']);
+        elLUKContainer.append(elLUKLabel, elLUKValue);
+
+        return elLUKContainer;
     },
 
     makeHPComponent() {
