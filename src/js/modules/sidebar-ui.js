@@ -33,7 +33,7 @@ export const SidebarUI = {
 
     async renderAsync() {
         
-    }
+    },
 
     makeProfileSection() {
         let elCharacterName = el('h2', ['character-name'], {id: 'character-name'});
