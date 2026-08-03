@@ -419,7 +419,7 @@ export const SidebarUI = {
         elXPSepLabel.innerHTML = "/";
       
         let elXPMaxLabel = el('span', ['xp-max-label'], {id: 'xp-max-label'});
-        elMPMaxLabel.innerHTML = "0";
+        elXPMaxLabel.innerHTML = "0";
 
         let elXPSpan = el('span', ['stat-label'], {id: 'xp-label'});
         elXPSpan.innerHTML = "MP";
