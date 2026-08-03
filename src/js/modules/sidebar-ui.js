@@ -120,7 +120,7 @@ export const SidebarUI = {
         let elDEXComponent = this.makeDEXComponent();
         let elINTComponent = this.makeINTComponent();
         let elVITComponent = this.makeVITComponent();
-        let elWITComponent = this.makeWITComponent();
+        let elWITComponent = this.makeWISComponent();
         let elLUKComponent = this.makeLUKComponent();
         
         let elAttributesGrid = el('div', ['attributes-grid'], {id: 'attributes-grid'});
