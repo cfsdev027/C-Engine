@@ -3,7 +3,7 @@ import { ServiceStorage } from './service-storage.js';
 
 export const SidebarUI = {
     container: document.getElementById("game-container"),
-    profile: ServiceStorage.get('profile');
+    profile: ServiceStorage.get('profile'),
 
     dispose() {
         this.container.classList.add('d-none');
