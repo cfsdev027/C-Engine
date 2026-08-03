@@ -142,8 +142,17 @@ export const SidebarUI = {
         let elSkillsLabel = el('h3', ['skills-label'], {id: 'skills-label'});
         elSkillsLabel.innerHTML = "SKILLS";
 
+        let elPassiveSkillsLabel = el('h4', ['passivel-skills-label'], {id: 'passivel-skills-label'});
+        elPassiveSkillsLabel.innerHTML = "PASSIVE SKILLS";
+        
         let elPassiveSkills = el('li', ['passive-skills', 'unlocked'], {id: 'passive-skills'});
+        elPassiveSkills.append(elPassiveSkillsLabel);
+
+        let elActiveSkillsLabel = el('h4', ['active-skills-label'], {id: 'active-skills-label'});
+        elActiveSkillsLabel.innerHTML = "PASSIVE SKILLS";
+        
         let elActiveSkills = el('li', ['active-skills', 'unlocked'], {id: 'active-skills'});
+        elActiveSkills.append(elActiveSkillsLabel);
         
         let elTreeNode = el('ul', ['tree-node'], {id: 'tree-node'});
         elTreeNode.append(elPassiveSkills, elActiveSkills);
