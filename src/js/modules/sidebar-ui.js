@@ -144,15 +144,33 @@ export const SidebarUI = {
 
         let elPassiveSkillsLabel = el('h4', ['passivel-skills-label'], {id: 'passivel-skills-label'});
         elPassiveSkillsLabel.innerHTML = "PASSIVE SKILLS";
+
+        let elPassiveSkillModelLabel = el('h5', ['passivel-skill-model-label'], {id: 'passivel-skill-model-label'});
+        elPassiveSkillModelLabel.innerHTML = "PASSIVE_MODEL";
+
+        let elPassiveSkillModel = el('li', ['passive-skills-model'], {id: 'passive-skills-model'});
+        elPassiveSkillModel.append(elPassiveSkillModelLabel);
+
+        let elPassiveSkillsTree = el('ul', ['passive-skills-tree'], {id: 'passive-skills-tree'});
+        elPassiveSkillsTree.append(elPassiveSkillModel);
         
         let elPassiveSkills = el('li', ['passive-skills', 'unlocked'], {id: 'passive-skills'});
-        elPassiveSkills.append(elPassiveSkillsLabel);
+        elPassiveSkills.append(elPassiveSkillsLabel, elPassiveSkillsTree);
 
         let elActiveSkillsLabel = el('h4', ['active-skills-label'], {id: 'active-skills-label'});
         elActiveSkillsLabel.innerHTML = "PASSIVE SKILLS";
+
+        let elActiveSkillModelLabel = el('h5', ['active-skill-model-label'], {id: 'active-skill-model-label'});
+        elActiveSkillModelLabel.innerHTML = "ACTIVE_MODEL";
+
+        let elActiveSkillModel = el('li', ['active-skills-model'], {id: 'active-skills-model'});
+        elPassiveSkillModel.append(elActiveSkillModelLabel);
+
+        let elActiveSkillsTree = el('ul', ['active-skills-tree'], {id: 'active-skills-tree'});
+        elActiveSkillsTree.append(elActiveSkillModel);
         
         let elActiveSkills = el('li', ['active-skills', 'unlocked'], {id: 'active-skills'});
-        elActiveSkills.append(elActiveSkillsLabel);
+        elActiveSkills.append(elActiveSkillsLabel, elActiveSkillsTree);
         
         let elTreeNode = el('ul', ['tree-node'], {id: 'tree-node'});
         elTreeNode.append(elPassiveSkills, elActiveSkills);
