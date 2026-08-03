@@ -38,13 +38,13 @@ export const SidebarUI = {
         let elCharacterName = el('h2', ['character-name'], {id: 'character-name'});
         elCharacterName.innerHTML = "UNDEFINED";
         
-        let elRaceBadge = el('span', ['race-badge'], {id: 'race-badge'});
+        let elRaceBadge = el('span', ['profile-badge', 'light-badge', 'race-badge'], {id: 'race-badge'});
         elRaceBadge.innerHTML = "UNDEFINED";
         
-        let elClassBadge = el('span', ['class-badge'], {id: 'class-badge'});
+        let elClassBadge = el('span', ['profile-badge', 'light-badge', 'class-badge'], {id: 'class-badge'});
         elClassBadge.innerHTML = "UNDEFINED";
       
-        let elLevelBadge = el('span', ['level-badge'], {id: 'level-badge'});
+        let elLevelBadge = el('span', ['profile-badge', 'light-badge', 'level-badge'], {id: 'level-badge'});
         elLevelBadge.innerHTML = "Nv. 0";
 
         let elCharacterMeta = el('p', ['character-meta'], {id: 'character-meta'});
