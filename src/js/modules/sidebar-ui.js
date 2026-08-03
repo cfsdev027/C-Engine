@@ -58,56 +58,56 @@ export const SidebarUI = {
 
     getCharacterName() {
         let elCharacterName = document.getElementById('character-name');
-        if(!elCharacterName) { stack: 'SidebarUI.getCharacterName()', message_error: 'Missing CONTAINER.' };
+        if(!elCharacterName) throw { stack: 'SidebarUI.getCharacterName()', message_error: 'Missing CONTAINER.' };
 
         return elCharacterName.innerHTML;
     },
 
     setCharacterName(value) {
         let elCharacterName = document.getElementById('character-name');
-        if(!elCharacterName) { stack: 'SidebarUI.setCharacterName()', message_error: 'Missing CONTAINER.' };
+        if(!elCharacterName) throw { stack: 'SidebarUI.setCharacterName()', message_error: 'Missing CONTAINER.' };
         
         elCharacterName.innerHTML = value;
     },
 
     getRaceBadge() {
         let elRaceBadge = document.getElementById('race-badge');
-        if(!elRaceBadge) { stack: 'SidebarUI.getRaceBadge()', message_error: 'Missing CONTAINER.' };
+        if(!elRaceBadge) throw { stack: 'SidebarUI.getRaceBadge()', message_error: 'Missing CONTAINER.' };
 
         return elRaceBadge.innerHTML;
     },
 
     setRaceBadge(value) {
         let elRaceBadge = document.getElementById('race-badge');
-        if(!elRaceBadge) { stack: 'SidebarUI.setRaceBadge()', message_error: 'Missing CONTAINER.' };
+        if(!elRaceBadge) throw { stack: 'SidebarUI.setRaceBadge()', message_error: 'Missing CONTAINER.' };
         
         elRaceBadge.innerHTML = value;
     },
 
     getClassBadge() {
         let elClassBadge = document.getElementById('class-badge');
-        if(!elClassBadge) { stack: 'SidebarUI.getClassBadge()', message_error: 'Missing CONTAINER.' };
+        if(!elClassBadge) throw { stack: 'SidebarUI.getClassBadge()', message_error: 'Missing CONTAINER.' };
 
         return elRaceBadge.innerHTML;
     },
 
     setClassBadge(value) {
         let elClassBadge = document.getElementById('race-badge');
-        if(!elClassBadge) { stack: 'SidebarUI.setClassBadge()', message_error: 'Missing CONTAINER.' };
+        if(!elClassBadge) throw { stack: 'SidebarUI.setClassBadge()', message_error: 'Missing CONTAINER.' };
         
         elClassBadge.innerHTML = value;
     },
 
     getLevelBadge() {
         let elLevelBadge = document.getElementById('level-badge');
-        if(!elLevelBadge) { stack: 'SidebarUI.getLevelBadge()', message_error: 'Missing CONTAINER.' };
+        if(!elLevelBadge) throw { stack: 'SidebarUI.getLevelBadge()', message_error: 'Missing CONTAINER.' };
 
         return elLevelBadge.innerHTML;
     },
 
     setLevelBadge(value) {
         let elLevelBadge = document.getElementById('level-badge');
-        if(!elLevelBadge) { stack: 'SidebarUI.setLevelBadge()', message_error: 'Missing CONTAINER.' };
+        if(!elLevelBadge) throw { stack: 'SidebarUI.setLevelBadge()', message_error: 'Missing CONTAINER.' };
         
         elLevelBadge.innerHTML = value;
     },
