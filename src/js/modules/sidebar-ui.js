@@ -295,19 +295,21 @@ export const SidebarUI = {
         elHPMinLabel.innerHTML = "0";
 
         let elHPSepLabel = el('span', ['hp-sep-label'], {id: 'hp-sep-label'});
-        elHPMinLabel.innerHTML = "/";
+        elHPSepLabel.innerHTML = "/";
       
         let elHPMaxLabel = el('span', ['hp-max-label'], {id: 'hp-max-label'});
         elHPMaxLabel.innerHTML = "0";
 
-        let elHPSpan = el('span', ['stat-label'], {id: 'hp-label'});
+        let elHPSpan = el('span', ['hp-label'], {id: 'hp-label'});
         elHPSpan.innerHTML = "HP";
-        elHPSpan.append(elHPMinLabel, elHPSepLabel, elHPMaxLabel);
+
+        let elHPSub = el('div', ['stat-label', 'hp-sub'], {id: 'hp-sub'});
+        elHPSub.append(elHPSpan, elHPMinLabel, elHPSepLabel, elHPMaxLabel);
 
         let elHPBar = this.makeHPBar();
 
         let elHPContainer = el('div', ['stat-bar-container', 'hp-bar-container'], {id: 'hp-bar-container'});
-        elHPContainer.append(elHPSpan, elHPBar);
+        elHPContainer.append(elHPSub, elHPBar);
 
         return elHPContainer;
     },
