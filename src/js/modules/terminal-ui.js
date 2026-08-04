@@ -18,23 +18,6 @@ export const TerminalUI = {
             message_error: 'el is not a function.'
         };
 
-        <main class="game-log" id="terminal">
-          <div class="log-entry system">[SISTEMA] Conectado ao reino de Aethelgard...</div>
-          <div class="log-entry story">
-            Você se encontra diante dos portões de uma antiga cripta coberta por musgo. O vento uiva entre as pedras velhas trazendo o cheiro de umidade e perigo.
-          </div>
-          <div class="log-entry event">
-            ⚠️ Um <strong>Esqueleto Guerreiro</strong> empunhando uma espada enferrujada bloqueia a entrada!
-          </div>
-        </main>
-
-        let elProfileSection = this.makeProfileSection();
-        let elStatsSection = this.makeStatsSection();
-        let elAttributesSection = this.makeAttributesSection();
-        let elSkillsSection = this.makeSkillsSection();
-        
-        this.container.append(elProfileSection, elStatsSection, elAttributesSection, elSkillsSection);
-
         (async () => {
             await this.renderAsync();
         })();
